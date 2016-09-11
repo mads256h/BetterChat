@@ -5,8 +5,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
-import scala.actors.threadpool.Arrays;
-
+import java.util.Arrays;
 import java.util.List;
 
 
