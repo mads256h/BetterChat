@@ -1,0 +1,16 @@
+[
+{
+  "modid": "BetterChat",
+  "name": "Better Chat",
+  "description": "Adds colors and groups to chat.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["MynameisMads"],
+  "credits": "HTX GameTech",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

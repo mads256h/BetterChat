@@ -1,0 +1,28 @@
+[22:06:38] [main/INFO]: Setting user: Player404
+[22:06:39] [Client thread/INFO]: LWJGL Version: 2.9.1
+[22:06:46] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Better Chat
+[22:06:47] [Sound Library Loader/INFO]: Sound engine started
+[22:06:58] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[22:06:58] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[22:06:58] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Better Chat
+[22:06:58] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[22:06:58] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[22:06:59] [Sound Library Loader/INFO]: Sound engine started
+[22:07:55] [Client thread/INFO]: Connecting to localhost, 25565
+n 1.7.10
+[22:07:35] [Server thread/INFO]: Loading properties
+[22:07:35] [Server thread/INFO]: Default game type: SURVIVAL
+[22:07:35] [Server thread/INFO]: Generating keypair
+[22:07:36] [Server thread/INFO]: Starting Minecraft server on *:25565
+[22:07:36] [Server thread/INFO]: Preparing level "world"
+[22:07:36] [Server thread/INFO]: Preparing start region for level 0
+[22:07:37] [Server thread/INFO]: Preparing spawn area: 63%
+[22:07:38] [Server thread/INFO]: Done (1,657s)! For help, type "help" or "?"
+[22:07:56] [Server thread/INFO]: com.mojang.authlib.GameProfile@6311aa8a[id=<null>,name=Player404,properties={},legacy=false] (/127.0.0.1:49163) lost connection: Disconnected
+[22:08:03] [Server thread/INFO]: Stopping the server
+[22:08:03] [Server thread/INFO]: Stopping server
+[22:08:03] [Server thread/INFO]: Saving players
+[22:08:03] [Server thread/INFO]: Saving worlds
+[22:08:03] [Server thread/INFO]: Saving chunks for level 'world'/Overworld
+[22:08:03] [Server thread/INFO]: Saving chunks for level 'world'/Nether
+[22:08:03] [Server thread/INFO]: Saving chunks for level 'world'/The End
