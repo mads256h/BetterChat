@@ -8,6 +8,8 @@ import net.minecraft.util.ChatComponentText;
 /**
  * Created by Mads on 12-09-2016.
  */
+
+//region Commmand Handler
 public class CommandHandler extends CommandBase
 {
 
@@ -35,7 +37,6 @@ public class CommandHandler extends CommandBase
             ServerProxy.getConfig();
             System.out.println("Reloaded BetterChat config...");
         }
-
-
     }
 }
+//endregion

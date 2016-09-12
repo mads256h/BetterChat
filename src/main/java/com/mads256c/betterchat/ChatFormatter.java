@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class ChatFormatter {
 
+    //region Variables
 
     public static String[] PlayersTag = new String[10];
 
@@ -37,7 +38,10 @@ public class ChatFormatter {
     public static List<String> Players9 = new ArrayList<String>();
     public static List<String> Players10 = new ArrayList<String>();
 
+    //endregion
 
+
+    //region Color Parser
     public static String ColorParser(List<String> Colorlist)
     {
         String finalString = "";
@@ -133,6 +137,9 @@ public class ChatFormatter {
         return finalString;
     }
 
+    //endregion
+
+    //region Chat Parser
     public static String ChatParser (EntityPlayerMP sender)
     {
         String finalString = "";
@@ -177,4 +184,5 @@ public class ChatFormatter {
 
         return finalString;
     }
+    //endregion
 }

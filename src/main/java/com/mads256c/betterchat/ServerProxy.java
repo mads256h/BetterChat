@@ -6,7 +6,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import java.util.Arrays;
-import java.util.List;
 
 
 public class ServerProxy
@@ -18,6 +17,7 @@ public class ServerProxy
 
     public static Configuration config;
 
+    //region Config Defaults
     static String[] Default1 = {"the_master256c", "miliku"};
     static String[] Default2 = {"miliku"};
     static String[] Default3 = {"the_master256c"};
@@ -41,8 +41,9 @@ public class ServerProxy
     static String[] DefaultColor10 = {"STRIKETHROUGH"};
 
     static String[] DefaultTag = {"Admin", "Mod", "Dev", "A", "B", "C"};
+//endregion
 
-
+    //region Configuration
     public static void getConfig()
     {
         config.load();
@@ -104,10 +105,10 @@ public class ServerProxy
         ChatFormatter.Players10 = Arrays.asList(PlayersArray10);
 
     }
+//endregion
 
     public void preInit(FMLPreInitializationEvent e)
     {
-
         config = new Configuration(e.getSuggestedConfigurationFile());
 
         getConfig();
