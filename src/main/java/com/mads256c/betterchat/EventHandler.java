@@ -8,7 +8,6 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
@@ -22,34 +21,23 @@ public class EventHandler
     public static final String C = EnumChatFormatting.ITALIC.toString() + EnumChatFormatting.DARK_GREEN.toString() + "[1.C] " + EnumChatFormatting.RESET.toString();
     public static final String NoGroup = EnumChatFormatting.DARK_GRAY.toString() + "[No Group] " + EnumChatFormatting.RESET.toString();
 
-    public static List<String> DevPlayers = new ArrayList<String>();
-    public static List<String> BPlayers = new ArrayList<String>();
-    public static List<String> CPlayers = new ArrayList<String>();
+
+
 
 
 
     @SubscribeEvent(priority=EventPriority.LOWEST)
     public void onServerChat(ServerChatEvent e)
     {
-        String finalMessage = "";
+
 
         EntityPlayerMP sender = e.player;
 
         List<EntityPlayerMP> players = MinecraftServer.getServer().getConfigurationManager().playerEntityList;
 
-        if (BPlayers.contains(sender.getDisplayName()))
-        {
-            finalMessage += B;
-        }
-        if (CPlayers.contains(sender.getDisplayName())) {
-            finalMessage += C;
-        }
-        if (DevPlayers.contains(sender.getDisplayName())) {
-            finalMessage += Dev;
 
-        } else if (!BPlayers.contains(sender.getDisplayName()) && !CPlayers.contains(sender.getDisplayName()) && !DevPlayers.contains(sender.getDisplayName())) {
-            finalMessage += NoGroup;
-        }
+        String finalMessage = ChatFormatter.ChatParser(sender);
+
 
         for (EntityPlayerMP receiver : players)
         {
