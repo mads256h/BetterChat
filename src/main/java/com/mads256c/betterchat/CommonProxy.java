@@ -11,10 +11,7 @@ public class CommonProxy
         System.out.println("BetterChat loading...");
     }
 
-    public void init(FMLInitializationEvent e)
-    {
-
-    }
+    public void init(FMLInitializationEvent e) {}
 
     public void postInit(FMLPostInitializationEvent e) {}
 }

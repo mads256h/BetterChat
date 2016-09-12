@@ -1,10 +1,14 @@
 package com.mads256c.betterchat;
 
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
@@ -23,6 +27,7 @@ public class EventHandler
     public static List<String> CPlayers = new ArrayList<String>();
 
 
+
     @SubscribeEvent(priority=EventPriority.LOWEST)
     public void onServerChat(ServerChatEvent e)
     {
@@ -31,26 +36,27 @@ public class EventHandler
         EntityPlayerMP sender = e.player;
 
         List<EntityPlayerMP> players = MinecraftServer.getServer().getConfigurationManager().playerEntityList;
+
+        if (BPlayers.contains(sender.getDisplayName()))
+        {
+            finalMessage += B;
+        }
+        if (CPlayers.contains(sender.getDisplayName())) {
+            finalMessage += C;
+        }
+        if (DevPlayers.contains(sender.getDisplayName())) {
+            finalMessage += Dev;
+
+        } else if (!BPlayers.contains(sender.getDisplayName()) && !CPlayers.contains(sender.getDisplayName()) && !DevPlayers.contains(sender.getDisplayName())) {
+            finalMessage += NoGroup;
+        }
+
         for (EntityPlayerMP receiver : players)
         {
-            if (BPlayers.contains(sender.getDisplayName()))
-            {
-                finalMessage += B;
-            }
-            if (CPlayers.contains(sender.getDisplayName())) {
-                finalMessage += C;
-
-            }
-            if (DevPlayers.contains(sender.getDisplayName())) {
-                finalMessage += Dev;
-
-            } else {
-                finalMessage += NoGroup;
-            }
-
             receiver.addChatMessage(new ChatComponentText(finalMessage + "<" + sender.getDisplayName() + ">: " + e.message));
-            System.out.println(sender.getDisplayName() + " said: " + e.message);
         }
+
+        System.out.println(sender.getDisplayName() + " said: " + e.message);
         e.setCanceled(true);
     }
 }

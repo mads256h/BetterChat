@@ -5,12 +5,16 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import net.minecraft.command.ICommandManager;
+import net.minecraft.command.ServerCommandManager;
+import net.minecraft.server.MinecraftServer;
 
-@Mod(modid="BetterChat", acceptableRemoteVersions="*", version="0.1")
+@Mod(modid="BetterChat", acceptableRemoteVersions="*", version="0.2")
 public class BetterChat
 {
     public static final String MODID = "BetterChat";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "0.2";
     @SidedProxy(clientSide="com.mads256c.betterchat.ClientProxy", serverSide="com.mads256c.betterchat.ServerProxy")
     public static CommonProxy proxy;
 
@@ -30,5 +34,15 @@ public class BetterChat
     public void postInit(FMLPostInitializationEvent e)
     {
         proxy.postInit(e);
+    }
+
+    @Mod.EventHandler
+    public void serverStart(FMLServerStartingEvent e)
+    {
+        MinecraftServer server = MinecraftServer.getServer();
+        ICommandManager iCommandManager = server.getCommandManager();
+        ServerCommandManager serverCommandManager = (ServerCommandManager)iCommandManager;
+
+        serverCommandManager.registerCommand(new CommandHandler());
     }
 }

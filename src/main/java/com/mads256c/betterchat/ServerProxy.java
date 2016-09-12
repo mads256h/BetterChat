@@ -14,12 +14,16 @@ public class ServerProxy
 
 
 {
-    String[] DefaultDev = {"the_master256c", "miliku"};
-    String[] DefaultB = {"miliku"};
-    String[] DefaultC = {"the_master256c"};
-    public void preInit(FMLPreInitializationEvent e)
+    Boolean isRegistered = false;
+
+    public static Configuration config;
+
+    static String[] DefaultDev = {"the_master256c", "miliku"};
+    static String[] DefaultB = {"miliku"};
+    static String[] DefaultC = {"the_master256c"};
+
+    public static void getConfig()
     {
-        Configuration config = new Configuration(e.getSuggestedConfigurationFile());
         config.load();
 
         String[] DevPlayersArray = config.getStringList("DevPlayers", Configuration.CATEGORY_GENERAL, DefaultDev, "Players who are Dev's get the Dev tag. Separate with enter");
@@ -29,10 +33,18 @@ public class ServerProxy
 
         config.save();
 
-
         EventHandler.DevPlayers = Arrays.asList(DevPlayersArray);
         EventHandler.BPlayers = Arrays.asList(BPlayersArray);
         EventHandler.CPlayers = Arrays.asList(CPlayersArray);
+
+    }
+
+    public void preInit(FMLPreInitializationEvent e)
+    {
+
+        config = new Configuration(e.getSuggestedConfigurationFile());
+
+        getConfig();
 
         super.preInit(e);
     }
@@ -40,7 +52,10 @@ public class ServerProxy
     public void init(FMLInitializationEvent e)
     {
         super.init(e);
-        MinecraftForge.EVENT_BUS.register(new EventHandler());
+        if (!isRegistered) {
+            MinecraftForge.EVENT_BUS.register(new EventHandler());
+            isRegistered = true;
+        }
     }
 
     public void postInit(FMLPostInitializationEvent e)
