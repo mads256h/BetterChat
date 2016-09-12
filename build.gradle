@@ -17,13 +17,30 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.1"
+project.ext {
+    major = "1"
+    minor = "2"
+    if (System.getenv("BUILD_NUMBER") != null) {
+        build = System.getenv("BUILD_NUMBER")
+    } else {
+        build = "-custom"
+    }
+    mcVersion = "1.7.10"
+}
+
+version= "${project.ext.mcVersion}-${project.ext.major}.${project.minor}.${project.build}"
 group= "com.mads256c.betterchat" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BetterChat"
 
 minecraft {
     version = "1.7.10-10.13.4.1558-1.7.10"
     runDir = "eclipse"
+
+    // replacing stuff in the source
+    replace '@MAJOR@', project.major
+    replace '@MINOR@', project.minor
+    replace '@MC_VERSION@', project.ext.mcVersion
+    replace '@BUILD_NUMBER@', project.build
 }
 
 dependencies {

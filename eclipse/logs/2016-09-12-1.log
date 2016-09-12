@@ -26,3 +26,4 @@ Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft For
 [12:23:42] [Client thread/INFO]: Connecting to localhost, 25565
 [12:23:46] [Client thread/INFO]: [CHAT] §r <Player423>: test
 [12:26:12] [Client thread/INFO]: Stopping!
+[12:26:28] [Server thread/INFO]: Starting minecraft server version 1.7.10

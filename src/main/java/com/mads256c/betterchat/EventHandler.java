@@ -27,7 +27,7 @@ public class EventHandler
         {receiver.addChatMessage(new ChatComponentText(finalMessage + "<" + sender.getDisplayName() + ">: " + e.message));
         }
 
-        System.out.println(sender.getDisplayName() + " said: " + e.message);
+        BetterChat.bLog.info(sender.getDisplayName() + " said: " + e.message);
         e.setCanceled(true);
     }
     //endregion

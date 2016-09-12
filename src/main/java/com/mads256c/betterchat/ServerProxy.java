@@ -128,7 +128,7 @@ public class ServerProxy
     public void postInit(FMLPostInitializationEvent e)
     {
         super.postInit(e);
-        System.out.println("BetterChat has loaded server-side.");
+        BetterChat.bLog.info("BetterChat has loaded server-side.");
     }
 }
 

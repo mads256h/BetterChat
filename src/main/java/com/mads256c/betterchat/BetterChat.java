@@ -10,11 +10,15 @@ import net.minecraft.command.ICommandManager;
 import net.minecraft.command.ServerCommandManager;
 import net.minecraft.server.MinecraftServer;
 
-@Mod(modid="BetterChat", acceptableRemoteVersions="*", version="1.1")
+import org.apache.logging.log4j.Logger;
+
+@Mod(modid=Refrence.MODID, name=Refrence.NAME, acceptableRemoteVersions="*", version=Refrence.VERSION)
 public class BetterChat
 {
-    public static final String MODID = "BetterChat";
-    public static final String VERSION = "1.1";
+    public static final String MODID = Refrence.MODID;
+    public static final String VERSION = Refrence.MODID;
+
+    public static Logger bLog;
 
     //region Proxy
 
@@ -24,6 +28,7 @@ public class BetterChat
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
+        BetterChat.bLog = e.getModLog();
         proxy.preInit(e);
     }
 

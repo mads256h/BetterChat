@@ -28,14 +28,14 @@ public class CommandHandler extends CommandBase
         if (iCommandSender instanceof EntityPlayer)
         {
             ServerProxy.getConfig();
-            System.out.println("Reloaded BetterChat config...");
+            BetterChat.bLog.info("Reloaded BetterChat config...");
             EntityPlayer player = (EntityPlayer)iCommandSender;
                     player.addChatMessage(new ChatComponentText("Reloaded BetterChat config..."));
         }
         else
         {
             ServerProxy.getConfig();
-            System.out.println("Reloaded BetterChat config...");
+            BetterChat.bLog.info("Reloaded BetterChat config...");
         }
     }
 }
