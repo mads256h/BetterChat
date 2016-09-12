@@ -18,14 +18,16 @@ public class EventHandler
     {
         EntityPlayerMP sender = e.player;
         List<EntityPlayerMP> players = MinecraftServer.getServer().getConfigurationManager().playerEntityList;
+
+
         String finalMessage = ChatFormatter.ChatParser(sender);
 
-        for (EntityPlayerMP receiver : players)
-            {
-                receiver.addChatMessage(new ChatComponentText(finalMessage + "<" + sender.getDisplayName() + ">: " + e.message));
-            }
 
-        BetterChat.bLog.info(sender.getDisplayName() + " said: " + e.message);
+        for (EntityPlayerMP receiver : players)
+        {receiver.addChatMessage(new ChatComponentText(finalMessage + "<" + sender.getDisplayName() + ">: " + e.message));
+        }
+
+        System.out.println(sender.getDisplayName() + " said: " + e.message);
         e.setCanceled(true);
     }
     //endregion

@@ -5,8 +5,11 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 
+/**
+ * Created by Mads on 12-09-2016.
+ */
 
-
+//region Commmand Handler
 public class CommandHandler extends CommandBase
 {
 
@@ -36,3 +39,4 @@ public class CommandHandler extends CommandBase
         }
     }
 }
+//endregion

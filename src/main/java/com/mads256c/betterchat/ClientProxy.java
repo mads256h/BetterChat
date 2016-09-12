@@ -21,6 +21,6 @@ public class ClientProxy
     public void postInit(FMLPostInitializationEvent e)
     {
         super.postInit(e);
-        BetterChat.bLog.info("BetterChat has loaded client-side.");
+        System.out.println("BetterChat has loaded client-side.");
     }
 }

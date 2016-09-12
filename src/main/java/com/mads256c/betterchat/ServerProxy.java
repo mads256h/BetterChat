@@ -13,38 +13,38 @@ public class ServerProxy
 
 
 {
-    private Boolean isRegistered = false;
+    Boolean isRegistered = false;
 
-    private static Configuration config;
+    public static Configuration config;
 
     //region Config Defaults
-    private static String[] Default1 = {"the_master256c", "miliku"};
-    private static String[] Default2 = {"miliku"};
-    private static String[] Default3 = {"the_master256c"};
-    private static String[] Default4 = {"example"};
-    private static String[] Default5 = {"example"};
-    private static String[] Default6 = {"example"};
-    private static String[] Default7 = {"example"};
-    private static String[] Default8 = {"example"};
-    private static String[] Default9 = {"example"};
-    private static String[] Default10 = {"example"};
+    static String[] Default1 = {"the_master256c", "miliku"};
+    static String[] Default2 = {"miliku"};
+    static String[] Default3 = {"the_master256c"};
+    static String[] Default4 = {"example"};
+    static String[] Default5 = {"example"};
+    static String[] Default6 = {"example"};
+    static String[] Default7 = {"example"};
+    static String[] Default8 = {"example"};
+    static String[] Default9 = {"example"};
+    static String[] Default10 = {"example"};
 
-    private static String[] DefaultColor1 = {"BOLD", "DARK_AQUA"};
-    private static String[] DefaultColor2 = {"DARK_PURPLE"};
-    private static String[] DefaultColor3 = {"UNDERLINE"};
-    private static String[] DefaultColor4 = {"RED"};
-    private static String[] DefaultColor5 = {"GOLD"};
-    private static String[] DefaultColor6 = {"BLACK"};
-    private static String[] DefaultColor7 = {"AQUA"};
-    private static String[] DefaultColor8 = {"DARK_GRAY"};
-    private static String[] DefaultColor9 = {"BOLD"};
-    private static String[] DefaultColor10 = {"STRIKETHROUGH"};
+    static String[] DefaultColor1 = {"BOLD", "DARK_AQUA"};
+    static String[] DefaultColor2 = {"DARK_PURPLE"};
+    static String[] DefaultColor3 = {"UNDERLINE"};
+    static String[] DefaultColor4 = {"RED"};
+    static String[] DefaultColor5 = {"GOLD"};
+    static String[] DefaultColor6 = {"BLACK"};
+    static String[] DefaultColor7 = {"AQUA"};
+    static String[] DefaultColor8 = {"DARK_GRAY"};
+    static String[] DefaultColor9 = {"BOLD"};
+    static String[] DefaultColor10 = {"STRIKETHROUGH"};
 
-    private static String[] DefaultTag = {"Admin", "Mod", "Dev", "A", "B", "C"};
+    static String[] DefaultTag = {"Admin", "Mod", "Dev", "A", "B", "C"};
 //endregion
 
     //region Configuration
-    static void getConfig()
+    public static void getConfig()
     {
         config.load();
 
@@ -128,7 +128,7 @@ public class ServerProxy
     public void postInit(FMLPostInitializationEvent e)
     {
         super.postInit(e);
-        BetterChat.bLog.info("BetterChat has loaded server-side.");
+        System.out.println("BetterChat has loaded server-side.");
     }
 }
 
