@@ -8,7 +8,7 @@ public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent e)
     {
-        System.out.println("BetterChat loading...");
+        BetterChat.bLog.info("BetterChat loading...");
     }
 
     public void init(FMLInitializationEvent e) {}

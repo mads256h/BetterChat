@@ -6,43 +6,41 @@ import net.minecraft.util.EnumChatFormatting;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Mads on 12-09-2016.
- */
-public class ChatFormatter {
+
+class ChatFormatter {
 
     //region Variables
 
-    public static String[] PlayersTag = new String[10];
+    static String[] PlayersTag = new String[10];
 
-    public static List<String> Players1Color = new ArrayList<String>();
-    public static List<String> Players2Color = new ArrayList<String>();
-    public static List<String> Players3Color = new ArrayList<String>();
-    public static List<String> Players4Color = new ArrayList<String>();
-    public static List<String> Players5Color = new ArrayList<String>();
-    public static List<String> Players6Color = new ArrayList<String>();
-    public static List<String> Players7Color = new ArrayList<String>();
-    public static List<String> Players8Color = new ArrayList<String>();
-    public static List<String> Players9Color = new ArrayList<String>();
-    public static List<String> Players10Color = new ArrayList<String>();
+    static List<String> Players1Color = new ArrayList<String>();
+    static List<String> Players2Color = new ArrayList<String>();
+    static List<String> Players3Color = new ArrayList<String>();
+    static List<String> Players4Color = new ArrayList<String>();
+    static List<String> Players5Color = new ArrayList<String>();
+    static List<String> Players6Color = new ArrayList<String>();
+    static List<String> Players7Color = new ArrayList<String>();
+    static List<String> Players8Color = new ArrayList<String>();
+    static List<String> Players9Color = new ArrayList<String>();
+    static List<String> Players10Color = new ArrayList<String>();
 
 
-    public static List<String> Players1 = new ArrayList<String>();
-    public static List<String> Players2 = new ArrayList<String>();
-    public static List<String> Players3 = new ArrayList<String>();
-    public static List<String> Players4 = new ArrayList<String>();
-    public static List<String> Players5 = new ArrayList<String>();
-    public static List<String> Players6 = new ArrayList<String>();
-    public static List<String> Players7 = new ArrayList<String>();
-    public static List<String> Players8 = new ArrayList<String>();
-    public static List<String> Players9 = new ArrayList<String>();
-    public static List<String> Players10 = new ArrayList<String>();
+    static List<String> Players1 = new ArrayList<String>();
+    static List<String> Players2 = new ArrayList<String>();
+    static List<String> Players3 = new ArrayList<String>();
+    static List<String> Players4 = new ArrayList<String>();
+    static List<String> Players5 = new ArrayList<String>();
+    static List<String> Players6 = new ArrayList<String>();
+    static List<String> Players7 = new ArrayList<String>();
+    static List<String> Players8 = new ArrayList<String>();
+    static List<String> Players9 = new ArrayList<String>();
+    static List<String> Players10 = new ArrayList<String>();
 
     //endregion
 
 
     //region Color Parser
-    public static String ColorParser(List<String> Colorlist)
+    private static String ColorParser(List<String> Colorlist)
     {
         String finalString = "";
         if (Colorlist.contains("AQUA"))
@@ -140,7 +138,7 @@ public class ChatFormatter {
     //endregion
 
     //region Chat Parser
-    public static String ChatParser (EntityPlayerMP sender)
+    static String ChatParser(EntityPlayerMP sender)
     {
         String finalString = "";
 
