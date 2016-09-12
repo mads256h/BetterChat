@@ -29,7 +29,7 @@ public class ServerProxy
     static String[] Default9 = {"example"};
     static String[] Default10 = {"example"};
 
-    static String[] DefaultColor1 = {"BOLD, DARK_AQUA"};
+    static String[] DefaultColor1 = {"BOLD", "DARK_AQUA"};
     static String[] DefaultColor2 = {"DARK_PURPLE"};
     static String[] DefaultColor3 = {"UNDERLINE"};
     static String[] DefaultColor4 = {"RED"};
@@ -40,10 +40,14 @@ public class ServerProxy
     static String[] DefaultColor9 = {"BOLD"};
     static String[] DefaultColor10 = {"STRIKETHROUGH"};
 
+    static String[] DefaultTag = {"Admin", "Mod", "Dev", "A", "B", "C"};
+
 
     public static void getConfig()
     {
         config.load();
+
+        String[] PlayersGroupTag = config.getStringList("PlayersGroupTag", Configuration.CATEGORY_GENERAL, DefaultTag, "Group name tags 1, 2, 3 ,4 ect... Up to 10 groups. Seperate with enter");
 
 
         String[] PlayerColors1 = config.getStringList("PlayerGroup1Color", "Color", DefaultColor1, "Valid formatting: AQUA, BLACK, BLUE, BOLD, DARK_AQUA, DARK_BLUE, DARK_GRAY, DARK_GREEN, DARK_PURPLE, DARK_RED, GOLD, GRAY, GREEN, ITALIC, LIGHT_PURPLE, OBFUSCATED, RED, RESET, STRIKETHROUGH, UNDERLINE, WHITE, YELLOW. Seperate with enter");
@@ -72,6 +76,21 @@ public class ServerProxy
 
 
         config.save();
+
+        ChatFormatter.PlayersTag = PlayersGroupTag;
+
+        ChatFormatter.Players1Color = Arrays.asList(PlayerColors1);
+        ChatFormatter.Players2Color = Arrays.asList(PlayerColors2);
+        ChatFormatter.Players3Color = Arrays.asList(PlayerColors3);
+        ChatFormatter.Players4Color = Arrays.asList(PlayerColors4);
+        ChatFormatter.Players5Color = Arrays.asList(PlayerColors5);
+        ChatFormatter.Players6Color = Arrays.asList(PlayerColors6);
+        ChatFormatter.Players7Color = Arrays.asList(PlayerColors7);
+        ChatFormatter.Players8Color = Arrays.asList(PlayerColors8);
+        ChatFormatter.Players9Color = Arrays.asList(PlayerColors9);
+        ChatFormatter.Players10Color = Arrays.asList(PlayerColors10);
+
+
 
         ChatFormatter.Players1 = Arrays.asList(PlayersArray1);
         ChatFormatter.Players2 = Arrays.asList(PlayersArray2);
