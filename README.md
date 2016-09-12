@@ -8,3 +8,5 @@ Note also that the patches are built against "unrenamed" MCP source code (aka sr
 
 To build this project open command prompt in the project root.
 Type 'gradlew build' to build the project. You can find it in /build/libs/BetterChat-X.X
+
+It has to pass the CodeShip build test before your pull request get merged.
