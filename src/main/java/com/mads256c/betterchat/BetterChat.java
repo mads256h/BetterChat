@@ -18,7 +18,7 @@ public class BetterChat
     public static final String MODID = "BetterChat";
     public static final String VERSION = "1.1";
 
-    public static Logger bLog;
+    static Logger bLog;
 
     //region Proxy
     @SidedProxy(clientSide="com.mads256c.betterchat.ClientProxy", serverSide="com.mads256c.betterchat.ServerProxy")
