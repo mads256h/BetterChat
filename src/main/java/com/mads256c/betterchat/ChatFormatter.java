@@ -170,7 +170,7 @@ public class ChatFormatter {
             finalString += ColorParser(Players10Color) + PlayersTag[9];
         }
         else if (finalString.equals("")) {
-            finalString += "[No Group]";
+            finalString += EnumChatFormatting.DARK_GRAY.toString() + "[No Group]";
         }
 
         finalString += EnumChatFormatting.RESET + " ";
