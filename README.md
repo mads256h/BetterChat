@@ -1,4 +1,4 @@
-#Source installation information for modders
+#Source installation information for modders ![Build Status](https://codeship.com/projects/dce43b80-5b42-0134-7628-4297ec814d8e/status?branch=master)
 
 This code follows the Minecraft Forge installation methodology. It will apply some small patches to the vanilla MCP source code, giving you and it access to some of the data and functions you need to build a successful mod.
 
