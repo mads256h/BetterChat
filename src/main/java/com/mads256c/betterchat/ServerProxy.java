@@ -16,37 +16,21 @@ public class ServerProxy
 
     public static Configuration config;
 
-    //region Config Defaults
-    static String[] Default1 = {"the_master256c", "miliku"};
-    static String[] Default2 = {"miliku"};
-    static String[] Default3 = {"the_master256c"};
-    static String[] Default4 = {"example"};
-    static String[] Default5 = {"example"};
-    static String[] Default6 = {"example"};
-    static String[] Default7 = {"example"};
-    static String[] Default8 = {"example"};
-    static String[] Default9 = {"example"};
-    static String[] Default10 = {"example"};
-
-    static String[] DefaultColor1 = {"BOLD", "DARK_AQUA"};
-    static String[] DefaultColor2 = {"DARK_PURPLE"};
-    static String[] DefaultColor3 = {"UNDERLINE"};
-    static String[] DefaultColor4 = {"RED"};
-    static String[] DefaultColor5 = {"GOLD"};
-    static String[] DefaultColor6 = {"BLACK"};
-    static String[] DefaultColor7 = {"AQUA"};
-    static String[] DefaultColor8 = {"DARK_GRAY"};
-    static String[] DefaultColor9 = {"BOLD"};
-    static String[] DefaultColor10 = {"STRIKETHROUGH"};
-
-    static String[] DefaultTag = {"Admin", "Mod", "Dev", "A", "B", "C"};
-//endregion
 
 
     public void preInit(FMLPreInitializationEvent e)
     {
         config = new Configuration(e.getSuggestedConfigurationFile());
 
+        config.setCategoryRequiresMcRestart(Configuration.CATEGORY_GENERAL, false);
+        config.setCategoryRequiresWorldRestart(Configuration.CATEGORY_GENERAL, false);
+
+        config.setCategoryRequiresMcRestart("NoGroup", false);
+        config.setCategoryRequiresWorldRestart("NoGroup", false);
+
+
+        config.setCategoryComment(Configuration.CATEGORY_GENERAL, "Valid colors are: AQUA, BLACK, BLUE, BOLD, DARK_AQUA, DARK_BLUE, DARK_GRAY, DARK_GREEN, DARK_PURPLE, DARK_RED, GOLD, GRAY, GREEN, ITALIC, LIGHT_PURPLE, OBFUSCATED, RED, RESET, STRIKETHROUGH, UNDERLINE, WHITE, YELLOW.");
+        config.setCategoryComment("NoGroup", "Here you can configure the tag and color of the unassigned group.");
         ConfigHandler.getConfig(config);
 
         super.preInit(e);
