@@ -1,5 +1,6 @@
 package com.mads256c.betterchat;
 
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumChatFormatting;
 
@@ -12,37 +13,7 @@ import java.util.List;
  */
 
 public class ChatFormatter {
-
-    //region Variables
-
-    public static String[] PlayersTag = new String[10];
-
-    public static List<String> Players1Color = new ArrayList<String>();
-    public static List<String> Players2Color = new ArrayList<String>();
-    public static List<String> Players3Color = new ArrayList<String>();
-    public static List<String> Players4Color = new ArrayList<String>();
-    public static List<String> Players5Color = new ArrayList<String>();
-    public static List<String> Players6Color = new ArrayList<String>();
-    public static List<String> Players7Color = new ArrayList<String>();
-    public static List<String> Players8Color = new ArrayList<String>();
-    public static List<String> Players9Color = new ArrayList<String>();
-    public static List<String> Players10Color = new ArrayList<String>();
-
-
-    public static List<String> Players1 = new ArrayList<String>();
-    public static List<String> Players2 = new ArrayList<String>();
-    public static List<String> Players3 = new ArrayList<String>();
-    public static List<String> Players4 = new ArrayList<String>();
-    public static List<String> Players5 = new ArrayList<String>();
-    public static List<String> Players6 = new ArrayList<String>();
-    public static List<String> Players7 = new ArrayList<String>();
-    public static List<String> Players8 = new ArrayList<String>();
-    public static List<String> Players9 = new ArrayList<String>();
-    public static List<String> Players10 = new ArrayList<String>();
-
-    //endregion
-
-
+    
     //region Color Parser
 
     //Parses the color(s) from the config returns String finalString
@@ -154,6 +125,8 @@ public class ChatFormatter {
 
         sender.refreshDisplayName();
 
+
+
         for (int i = 0; i < ConfigHandler.Players.length; i++)
         {
             for (int i1 = 0; i1 < ConfigHandler.MultiArrayParser(ConfigHandler.Players)[i].length; i1++ )
@@ -173,7 +146,7 @@ public class ChatFormatter {
 
 
         if (finalString.equals("")) {
-            finalString += EnumChatFormatting.DARK_GRAY.toString() + "[No Group]";
+            finalString += ConfigHandler.NoGroupColor + ConfigHandler.NoGroupTag;
         }
 
         finalString += EnumChatFormatting.RESET + " ";

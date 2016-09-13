@@ -24,7 +24,7 @@ public class EventHandler
 
 
         for (EntityPlayerMP receiver : players)
-        {receiver.addChatMessage(new ChatComponentText(finalMessage + "<" + sender.getDisplayName() + ">: " + e.message));
+        {receiver.addChatMessage(new ChatComponentText(finalMessage + "<" + e.username + ">: " + e.message));
         }
 
         BetterChat.bLog.info(sender.getDisplayName() + " said: " + e.message);
