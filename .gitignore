@@ -1,7 +1,7 @@
 .gradle
 .idea/
 build/
-eclipse/
+eclipse/*
 
 # Ignore Gradle GUI config
 gradle-app.setting
