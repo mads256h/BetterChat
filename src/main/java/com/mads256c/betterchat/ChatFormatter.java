@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Created by Mads on 12-09-2016.
  */
+
 public class ChatFormatter {
 
     //region Variables
@@ -42,9 +43,12 @@ public class ChatFormatter {
 
 
     //region Color Parser
+
+    //Parses the color(s) from the config returns String finalString
     public static String ColorParser(List<String> Colorlist)
     {
         String finalString = "";
+
         if (Colorlist.contains("AQUA"))
         {
             finalString += EnumChatFormatting.AQUA.toString();
@@ -140,6 +144,8 @@ public class ChatFormatter {
     //endregion
 
     //region Chat Parser
+
+    // Adds color and tags and returns String finalString
     public static String ChatParser (EntityPlayerMP sender)
     {
         String finalString = "";
