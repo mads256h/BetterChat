@@ -119,10 +119,7 @@ public class ServerProxy
     public void init(FMLInitializationEvent e)
     {
         super.init(e);
-        if (!isRegistered) {
-            MinecraftForge.EVENT_BUS.register(new EventHandler());
-            isRegistered = true;
-        }
+        if (!isRegistered) { MinecraftForge.EVENT_BUS.register(new EventHandler()); isRegistered = true; }
     }
 
     public void postInit(FMLPostInitializationEvent e)
