@@ -2,10 +2,9 @@ package com.mads256c.betterchat;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraftforge.common.config.Configuration;
-import scala.actors.threadpool.Arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**

@@ -12,6 +12,8 @@ import net.minecraft.server.MinecraftServer;
 
 import org.apache.logging.log4j.Logger;
 
+import static net.minecraft.server.MinecraftServer.getServer;
+
 @Mod(modid=Refrence.MODID, name=Refrence.NAME, acceptableRemoteVersions="*", version=Refrence.VERSION)
 public class BetterChat
 {
@@ -47,7 +49,7 @@ public class BetterChat
     @Mod.EventHandler
     public void serverStart(FMLServerStartingEvent e)
     {
-        MinecraftServer server = MinecraftServer.getServer();
+        MinecraftServer server = getServer();
         ICommandManager iCommandManager = server.getCommandManager();
         ServerCommandManager serverCommandManager = (ServerCommandManager)iCommandManager;
 
