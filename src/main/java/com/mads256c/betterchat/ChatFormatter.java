@@ -2,6 +2,8 @@ package com.mads256c.betterchat;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.common.config.Configuration;
+import scala.actors.threadpool.Arrays;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,37 +154,26 @@ public class ChatFormatter {
 
 
         sender.refreshDisplayName();
-        if (Players1.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players1Color) + PlayersTag[0];
+
+        for (int i = 0; i < ConfigHandler.Players.length; i++)
+        {
+            for (int i1 = 0; i1 < ConfigHandler.MultiArrayParser(ConfigHandler.Players)[i].length; i1++ )
+            {
+                if(ConfigHandler.MultiArrayParser(ConfigHandler.Players)[i][i1].equals(sender.getDisplayName()))
+                {
+                    if (ConfigHandler.MultiArrayParser(ConfigHandler.GroupColors).length > i) {
+                        finalString += ColorParser(Arrays.asList(ConfigHandler.MultiArrayParser(ConfigHandler.GroupColors)[i]));
+                    }
+                    if (ConfigHandler.GroupTag.length > i) {
+                        finalString += ConfigHandler.GroupTag[i];
+                    }
+                    finalString += EnumChatFormatting.RESET;
+                }
+            }
         }
-        if (Players2.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players2Color) + PlayersTag[1];
-        }
-        if (Players3.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players3Color) + PlayersTag[2];
-        }
-        if (Players4.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players4Color) + PlayersTag[3];
-        }
-        if (Players5.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players5Color) + PlayersTag[4];
-        }
-        if (Players6.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players6Color) + PlayersTag[5];
-        }
-        if (Players7.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players7Color) + PlayersTag[6];
-        }
-        if (Players8.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players8Color) + PlayersTag[7];
-        }
-        if (Players9.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players9Color) + PlayersTag[8];
-        }
-        if (Players10.contains(sender.getDisplayName())) {
-            finalString += ColorParser(Players10Color) + PlayersTag[9];
-        }
-        else if (finalString.equals("")) {
+
+
+        if (finalString.equals("")) {
             finalString += EnumChatFormatting.DARK_GRAY.toString() + "[No Group]";
         }
 
