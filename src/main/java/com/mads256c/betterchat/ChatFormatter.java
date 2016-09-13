@@ -1,10 +1,8 @@
 package com.mads256c.betterchat;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumChatFormatting;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,7 +11,7 @@ import java.util.List;
  */
 
 public class ChatFormatter {
-    
+
     //region Color Parser
 
     //Parses the color(s) from the config returns String finalString
