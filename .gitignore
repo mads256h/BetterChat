@@ -8,6 +8,8 @@ gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+!eclipse/server.properties
+!eclipse/eula.txt
 
 # Cache of project
 .gradletasknamecache

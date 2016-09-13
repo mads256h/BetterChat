@@ -3,6 +3,7 @@ package com.mads256c.betterchat;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumChatFormatting;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -142,9 +143,10 @@ public class ChatFormatter {
             }
         }
 
-
+        List<String> color = new ArrayList<String>();
+        color.add(ConfigHandler.NoGroupColor);
         if (finalString.equals("")) {
-            finalString += ConfigHandler.NoGroupColor + ConfigHandler.NoGroupTag;
+            finalString += ColorParser(color) + ConfigHandler.NoGroupTag;
         }
 
         finalString += EnumChatFormatting.RESET + " ";
