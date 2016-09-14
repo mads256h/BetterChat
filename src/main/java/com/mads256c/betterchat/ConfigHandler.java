@@ -1,5 +1,6 @@
 package com.mads256c.betterchat;
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 import net.minecraftforge.common.config.Configuration;
 
 /**
@@ -14,12 +15,19 @@ public class ConfigHandler
     public static String NoGroupColor;
     public static String NoGroupTag;
 
+    public static String NoGroupJoinMessage;
+    public static boolean NoGroupJoinMessageEnabled;
+
     public static String[] DefaultPlayers = {"the_master256c, miliku", "miliku", "the_master256c"};
     public static String[] DefaultGroupColors = {"BOLD, DARK_AQUA", "ITALIC, DARK_PURPLE"};
     public static String[] DefaultGroupTag = {"[Dev]", "[Admin]", "[Mod]"};
 
     public static String DefaultNoGroupColor = "DARK_GRAY";
     public static String DefaultNoGroupTag = "[NoGroup]";
+
+    public static String DefaultNoGroupJoinMessage = "You don't have a group ask an admin to add you to one.";
+    public static boolean DefaultNoGroupJoinMessageEnabled = false;
+
 
     public static void getConfig(Configuration config)
     {
@@ -31,6 +39,8 @@ public class ConfigHandler
 
             NoGroupColor = config.getString("NoGroupColor", "NoGroup", DefaultNoGroupColor, "Assign no group color here");
             NoGroupTag = config.getString("NoGroupTag", "NoGroup", DefaultNoGroupTag, "Assign no group tag here");
+            NoGroupJoinMessage = config.getString("NoGroupMessage", "NoGroup", DefaultNoGroupJoinMessage, "A message to display to a NoGroup user joining");
+            NoGroupJoinMessageEnabled = config.getBoolean("NoGroupMessageEnabled", "NoGroup", DefaultNoGroupJoinMessageEnabled, "Enable / Disable the NoGroupMessage");
 
         config.save();
     }
