@@ -1,6 +1,5 @@
 package com.mads256c.betterchat;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 import net.minecraftforge.common.config.Configuration;
 
 /**
