@@ -124,21 +124,22 @@ public class ChatFormatter {
 
         sender.refreshDisplayName();
 
-
+        String[][] players = ConfigHandler.MultiArrayParser(ConfigHandler.Players);
+        String[][] groupColors = ConfigHandler.MultiArrayParser(ConfigHandler.GroupColors);
 
         for (int i = 0; i < ConfigHandler.Players.length; i++)
         {
-            for (int i1 = 0; i1 < ConfigHandler.MultiArrayParser(ConfigHandler.Players)[i].length; i1++ )
+            for (int i1 = 0; i1 < players[i].length; i1++ )
             {
-                if(ConfigHandler.MultiArrayParser(ConfigHandler.Players)[i][i1].equals(sender.getDisplayName()))
+                if(players[i][i1].equals(sender.getDisplayName()))
                 {
-                    if (ConfigHandler.MultiArrayParser(ConfigHandler.GroupColors).length > i) {
-                        finalString += ColorParser(Arrays.asList(ConfigHandler.MultiArrayParser(ConfigHandler.GroupColors)[i]));
+                    if (groupColors.length > i) {
+                        finalString += ColorParser(Arrays.asList(groupColors[i]));
                     }
                     if (ConfigHandler.GroupTag.length > i) {
                         finalString += ConfigHandler.GroupTag[i];
                     }
-                    finalString += EnumChatFormatting.RESET;
+                    finalString += EnumChatFormatting.RESET.toString();
                 }
             }
         }
@@ -149,7 +150,7 @@ public class ChatFormatter {
             finalString += ColorParser(color) + ConfigHandler.NoGroupTag;
         }
 
-        finalString += EnumChatFormatting.RESET + " ";
+        finalString += EnumChatFormatting.RESET.toString() + " ";
 
         return finalString;
     }
