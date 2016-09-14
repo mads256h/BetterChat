@@ -5,10 +5,13 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.List;
 
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.ServerChatEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
 public class EventHandler
 {
@@ -31,4 +34,11 @@ public class EventHandler
         e.setCanceled(true);
     }
     //endregion
+
+    @SubscribeEvent(priority=EventPriority.LOWEST)
+    public void playerJoin(EntityJoinWorldEvent i)
+    {
+        if(i.entity instanceof EntityPlayer && ConfigHandler.NoGroupJoinMessageEnabled)
+            ((EntityPlayer)i.entity).addChatMessage(new ChatComponentText(ConfigHandler.NoGroupJoinMessage));
+    }
 }
