@@ -2,12 +2,8 @@ package com.mads256c.betterchat;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChatComponentText;
 
-/**
- * Created by Mads on 12-09-2016.
- */
 
 //region Command Handler
 public class CommandHandler extends CommandBase
