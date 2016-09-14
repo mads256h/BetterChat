@@ -7,6 +7,7 @@ import net.minecraftforge.common.config.Configuration;
  */
 public class ConfigHandler
 {
+    //region Variables
     public static String[] Players;
     public static String[] GroupColors;
     public static String[] GroupTag;
@@ -27,7 +28,9 @@ public class ConfigHandler
     public static String DefaultNoGroupJoinMessage = "You don't have a group ask an admin to add you to one.";
     public static boolean DefaultNoGroupJoinMessageEnabled = false;
 
+    //endregion
 
+    //region Get Config
     public static void getConfig(Configuration config)
     {
         config.load();
@@ -43,7 +46,9 @@ public class ConfigHandler
 
         config.save();
     }
+    //endregion
 
+    //region MultiDimensionArrayParser
     public static String[][] MultiArrayParser(String[] array)
     {
         String[][] finalArray = new String[array.length][];
@@ -55,4 +60,5 @@ public class ConfigHandler
 
         return finalArray;
     }
+    //endregion
 }

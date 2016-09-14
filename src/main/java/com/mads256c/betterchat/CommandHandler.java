@@ -15,28 +15,30 @@ public class CommandHandler extends CommandBase
 
     @Override
     public String getCommandName() {
-        return "reloadchat";
+        return "betterchat";
     }
 
     @Override
     public String getCommandUsage(ICommandSender iCommandSender) {
-        return "Reloads BetterChat config.";
+        return "/betterchat help for help";
     }
 
     @Override
-    public void processCommand(ICommandSender iCommandSender, String[] strings) {
-        if (iCommandSender instanceof EntityPlayer)
-        {
-            ConfigHandler.getConfig(ServerProxy.config);
-            BetterChat.bLog.info("Reloaded BetterChat config...");
-            EntityPlayer player = (EntityPlayer)iCommandSender;
-                    player.addChatMessage(new ChatComponentText("Reloaded BetterChat config..."));
-        }
-        else
-        {
-            ConfigHandler.getConfig(ServerProxy.config);
-            BetterChat.bLog.info("Reloaded BetterChat config...");
+    public void processCommand(ICommandSender iCommandSender, String[] args) {
+        if (args.length != 0) {
+                if (args[0].equals("reload")) {
+                    ConfigHandler.getConfig(ServerProxy.config);
+                    iCommandSender.addChatMessage(new ChatComponentText("Reloaded BetterChat config..."));
+                }
+                else if (args[0].equals("help")) {
+                    iCommandSender.addChatMessage(new ChatComponentText("BetterChat help"));
+                    iCommandSender.addChatMessage(new ChatComponentText("'/betterchat reload' to reload the config file"));
+                }
+            }
+        else {
+            iCommandSender.addChatMessage(new ChatComponentText(getCommandUsage(iCommandSender)));
         }
     }
+
 }
 //endregion
