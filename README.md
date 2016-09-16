@@ -1,4 +1,11 @@
-#Source installation information for modders ![Build Status](https://codeship.com/projects/dce43b80-5b42-0134-7628-4297ec814d8e/status?branch=master)
+##Build status
+
+Windows: [![Build status](https://ci.appveyor.com/api/projects/status/bwa9fdp3emb9ljk8/branch/master?svg=true)](https://ci.appveyor.com/project/mads256c/betterchat/branch/master)
+
+Linux: ![Build Status](https://codeship.com/projects/dce43b80-5b42-0134-7628-4297ec814d8e/status?branch=master)
+
+
+##Source installation information for modders 
 
 This code follows the Minecraft Forge installation methodology. It will apply some small patches to the vanilla MCP source code, giving you and it access to some of the data and functions you need to build a successful mod.
 
