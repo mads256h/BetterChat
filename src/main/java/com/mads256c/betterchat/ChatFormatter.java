@@ -129,6 +129,7 @@ public class ChatFormatter {
 
         for (int i = 0; i < ConfigHandler.Players.length; i++)
         {
+
             for (int i1 = 0; i1 < players[i].length; i1++ )
             {
                 if(players[i][i1].equals(sender.getDisplayName()))
